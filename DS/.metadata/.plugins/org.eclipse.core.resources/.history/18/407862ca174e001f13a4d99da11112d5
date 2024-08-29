@@ -1,0 +1,72 @@
+package com.problems.stackproblems;
+
+public class ImplementStack {
+    // Inner Node class
+    private class Node {
+        int value; // int value to store the node's data
+        Node next; // Reference to the next node in the stack
+
+        // Constructor for Node class
+        Node(int value) {
+            this.value = value; // Initialize the node's value
+            this.next = null;  // Initialize next reference to null
+        }
+    }
+
+    private Node top;   // Points to the top node of the stack
+    private int height; // Tracks the number of elements in the stack
+
+    // Constructor for Stack class
+    public ImplementStack(int initialValue) {
+        this.top = new Node(initialValue); // Initialize top with a new Node
+        this.height = 1; // Set height to 1 since the stack has one node
+    }
+
+    // Method to push a new value onto the stack
+    public void push(int value) {
+        Node newNode = new Node(value); // Create a new node with the given value
+        newNode.next = top; // Link the new node to the current top
+        top = newNode; // Update the top to be the new node
+        height++; // Increment the height
+    }
+
+    // Method to pop a value from the stack
+    public int pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty"); // Handle empty stack
+        }
+        int value = top.value; // Get the value of the top node
+        top = top.next; // Move the top pointer to the next node
+        height--; // Decrement the height
+        return value; // Return the popped value
+    }
+
+    // Method to peek at the top value without removing it
+    public int peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty"); // Handle empty stack
+        }
+        return top.value; // Return the value of the top node
+    }
+
+    // Method to check if the stack is empty
+    public boolean isEmpty() {
+        return height == 0; // Return true if height is 0
+    }
+
+    // Method to get the current height of the stack
+    public int getHeight() {
+        return height; // Return the current height
+    }
+
+    // Main method for testing the Stack class
+    public static void main(String[] args) {
+        ImplementStack stack = new ImplementStack(10); // Initialize stack with value 10
+        System.out.println("Top value: " + stack.peek()); // Should print 10
+        stack.push(20); // Push 20 onto the stack
+        System.out.println("Top value after push: " + stack.peek()); // Should print 20
+        System.out.println("Popped value: " + stack.pop()); // Should print 20
+        System.out.println("Top value after pop: " + stack.peek()); // Should print 10
+        System.out.println("Stack height: " + stack.getHeight()); // Should print 1
+    }
+}

@@ -1,0 +1,12 @@
+package com.prac.stack;
+
+public class Stack {
+	public int[] arr;
+	public int topOfStack;
+	
+	public Stack(int size) {
+		this.arr = new int[size];
+		this.topOfStack = -1;
+		System.out.println("The Stack is created with size of: " + size);
+	}
+}

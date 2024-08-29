@@ -1,0 +1,20 @@
+package com.prac.circularlinkedlist;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
+		
+		csll.createCSLL(6);
+		System.out.println(csll.head.value);
+		System.out.println(csll.head.next.value);
+		
+		System.out.println("***");
+		
+		csll.insertCSLL(5, 0);
+		System.out.println(csll.head.value);
+		System.out.println(csll.head.next.next.next.next.value);
+	}
+
+}

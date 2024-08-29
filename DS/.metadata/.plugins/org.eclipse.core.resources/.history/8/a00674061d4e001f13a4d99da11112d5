@@ -1,0 +1,16 @@
+package com.problems.stackproblems;
+
+public class Main {
+	
+	// Main method for testing the Stack class
+    public static void main(String[] args) {
+        ImplementStack stack = new ImplementStack(10); // Initialize stack with value 10
+        System.out.println("Top value: " + stack.peek()); // Should print 10
+        stack.push(20); // Push 20 onto the stack
+        System.out.println("Top value after push: " + stack.peek()); // Should print 20
+        System.out.println("Popped value: " + stack.pop()); // Should print 20
+        System.out.println("Top value after pop: " + stack.peek()); // Should print 10
+        System.out.println("Stack height: " + stack.getHeight()); // Should print 1
+    }
+
+}

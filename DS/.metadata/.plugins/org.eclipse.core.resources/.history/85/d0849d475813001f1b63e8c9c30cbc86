@@ -1,0 +1,20 @@
+package com.prac.loops;
+
+public class Loops {
+	
+	public static void main(String[] args)
+    {
+        
+		for(int rows=0; rows<=4; rows++) {
+			for(int cols = 0; cols<= 4-rows+1; cols++) {
+				
+				System.out.print(" *");
+				
+			}
+			
+			System.out.println();
+		}
+		
+    }
+
+}

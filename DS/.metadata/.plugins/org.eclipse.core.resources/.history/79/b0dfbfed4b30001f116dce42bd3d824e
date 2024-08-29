@@ -1,0 +1,38 @@
+package com.prac.loops;
+
+public class Example {
+	
+	
+	public int store(int a, int b) {
+		
+//		System.out.println();
+		
+		return a+b;
+	}
+
+	
+	public static void main(String[] args) {
+		
+		int a = 5;
+		
+		System.out.println(a);
+		
+		Example ex = new Example();
+		
+		int res = ex.store(2, 6);
+		
+		System.out.println(res);
+		
+		StringBuffer sb = new StringBuffer("Jagan ");
+		sb.append("Mohan");
+		
+		System.out.println(sb);
+		
+		String str = sb.toString();
+		
+		System.out.println(str);
+		
+	} 
+	
+
+}

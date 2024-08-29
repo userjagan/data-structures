@@ -1,0 +1,72 @@
+package com.prac.arrayproblems;
+
+public class ImplementStack {
+    // Inner Node class
+    private class Node {
+        int value; // Value of the node
+        Node next; // Reference to the next node in the stack
+
+        Node(int value) {
+            this.value = value;
+            this.next = null;
+        }
+    }
+
+    // Attributes for the Stack class
+    private Node top; // Points to the top node of the stack
+    private int height; // Keeps track of the number of elements in the stack
+
+    // Constructor
+    public ImplementStack(int initialValue) {
+        this.top = new Node(initialValue);
+        this.height = 1;
+    }
+
+    // Method to push a new value onto the stack
+    public void push(int value) {
+        Node newNode = new Node(value);
+        newNode.next = top; // Point newNode's next to the current top
+        top = newNode; // Update the top to the new node
+        height++; // Increment the height
+    }
+
+    // Method to pop a value from the stack
+    public int pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        int value = top.value; // Get the value of the top node
+        top = top.next; // Move the top pointer to the next node
+        height--; // Decrement the height
+        return value;
+    }
+
+    // Method to peek at the top value without removing it
+    public int peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return top.value;
+    }
+
+    // Method to check if the stack is empty
+    public boolean isEmpty() {
+        return height == 0;
+    }
+
+    // Method to get the current height of the stack
+    public int getHeight() {
+        return height;
+    }
+
+    // Main method for testing the Stack class
+    public static void main(String[] args) {
+        ImplementStack stack = new ImplementStack(10); // Initialize stack with value 10
+        System.out.println("Top value: " + stack.peek()); // Should print 10
+        stack.push(20); // Push 20 onto the stack
+        System.out.println("Top value after push: " + stack.peek()); // Should print 20
+        System.out.println("Popped value: " + stack.pop()); // Should print 20
+        System.out.println("Top value after pop: " + stack.peek()); // Should print 10
+        System.out.println("Stack height: " + stack.getHeight()); // Should print 1
+    }
+}

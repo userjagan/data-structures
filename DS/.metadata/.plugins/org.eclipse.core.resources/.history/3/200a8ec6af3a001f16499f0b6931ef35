@@ -1,0 +1,20 @@
+package com.prac.circularlinkedlist;
+
+public class CircularSinglyLinkedList {
+	public Node head;
+	public Node tail;
+	public int size;
+	
+	public Node createCSLL(int nodeValue) {
+		
+		Node node = new Node(); // ------------------------------> O(1)
+		node.value = nodeValue; // ------------------------------> O(1)
+		node.next = node; // ------------------------------> O(1)
+		head = node; // ------------------------------> O(1)
+		tail = node; // ------------------------------> O(1)
+		size = 1; // ------------------------------> O(1)
+		return head; // ------------------------------> O(1)
+	
+	}
+
+}

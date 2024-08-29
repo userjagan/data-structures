@@ -1,0 +1,63 @@
+package com.prac.loops;
+
+import java.util.HashSet;
+
+public class Practice {
+	
+//	public static boolean isUnique(int[] nums) {
+//		
+//		for(int i = 0; i < nums.length; i++) {
+//			for(int j = i+1; j < nums.length; j++) {
+//				if(nums[i] == nums[j]) {
+//					return false;
+//				}
+//			}
+//		}
+//		
+//		return true;
+//	}
+	
+	public static boolean isUnique(int[] intArray) {
+        
+        HashSet<Integer> seenElements = new HashSet<>();
+
+//        for (int num : intArray) {
+//            
+//            if (seenElements.add(num)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+	
+	 for (int num : intArray) {
+         if (seenElements.add(num)) {
+         } else {
+             return false;
+             }
+     }
+     return true;
+ }
+	
+	
+	
+	public static void main(String[] args) {
+
+		
+		int[] myArrray1 = {10,30,20,70,90,60,80};
+		
+		boolean tell1 = isUnique(myArrray1);
+		
+		int[] myArrray2 = {10,30,20,70,90,60,10};
+		
+		boolean tell2 = isUnique(myArrray2);
+		
+		System.out.println(tell1);
+		
+		System.out.println(tell2);
+		
+		System.out.println("Array 2 is unique: " + isUnique(myArrray2));
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.prac.loops;
+
+public class Example {
+	
+	
+	public int store(int a, int b) {
+		
+		return a+b;
+	}
+
+	
+	public static void main(String[] args) {
+		
+		int a = 5;
+		
+		System.out.println(a);
+		
+		Example ex = new Example();
+		
+		
+		
+	} 
+	
+
+}

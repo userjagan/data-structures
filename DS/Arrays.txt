@@ -1,0 +1,81 @@
+Array codes
+
+Single dimension.
+
+package com.prac.loops;
+
+public class PracticeExecute {
+	
+	PracticeExecute[] arr = null;
+	int value;
+	
+	public PracticeExecute(int sizeOfArray) {
+		
+		arr = new PracticeExecute[sizeOfArray];
+		
+		for(int i=0; i < arr.length; i++) {
+			arr[i] = null;
+		}	
+	}
+
+	public void insert(int location, int valueToBeChanged) {
+		
+		try {
+			if(location >= 0 && location < arr.length) {
+				if(arr[location] == null) {
+					arr[location] = new PracticeExecute(valueToBeChanged);
+					System.out.println("Successfully Inserted");
+					arr[location].value = valueToBeChanged;
+                    System.out.println("Successfully Inserted at location " + location);
+				}
+			else 
+			{
+				System.out.println("This cell is already occupied");
+			}
+			} else {
+				System.out.println("Out of Index");
+			}
+		} catch (Exception e) {
+			System.out.println("An error occurred: " + e.getMessage());
+		}
+	
+		
+	}
+	
+	@Override
+	public String toString() {
+		return String.valueOf(value);
+	}
+
+
+}
+
+main class
+
+package com.prac.loops;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Practice {
+	
+	public static void main(String[] args) {
+		
+		PracticeExecute pe = new PracticeExecute(6);
+		
+		pe.insert(0, 5);
+		pe.insert(1, 6);
+		pe.insert(2, 7);
+		pe.insert(3, 8);
+		pe.insert(4, 9);
+		pe.insert(5, 10);
+		
+		pe.insert(5, 2);
+		pe.insert(10, 10);
+		
+		System.out.println(Arrays.toString(pe.arr));
+		
+
+		
+	}
+}
